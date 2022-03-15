@@ -57,7 +57,7 @@ clone_dotfiles() {
   
   if [ ! -d "$DOTFILES" ]; then
     echo "Cloning dotfiles"
-    git clone https://github.com/twokul/dotfiles.git ~/.dotfiles
+    git clone https://github.com/twokul/dotfiles-new.git ~/.dotfiles
   else
     echo ".dotfiles have already been cloned into the home dir"
   fi

@@ -23,13 +23,13 @@ install_zi() {
 install_homebrew() {
   if [ "$(uname)" == "Darwin" ]; then
     brew="/opt/homebrew/bin/brew"
-    if [ -f "$brew" ]; then
-      echo "Homebrew is installed, nothing to do here"
-    else
+    if [ -z "$brew" ]; then
       echo "Homebrew is not installed, installing now"
       echo "This may take a while"
       echo "Homebrew requires osx command lines tools, please download xcode first"
       /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    else
+      echo "Homebrew is installed, nothing to do here"
     fi
   fi
 }

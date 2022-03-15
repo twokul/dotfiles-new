@@ -19,13 +19,13 @@
 - link:
     ~/.dotfiles: ""
     ~/.tmux.conf: tmux/tmux.conf
+    ~/.fzf.zsh: .config/fzf/.fzf.zsh
     ~/.zshrc: zsh/.zshrc
     ~/.zshenv: zsh/.zshenv
     ~/.gitconfig: git/.gitconfig
     ~/.config/nvim: .config/nvim
+    ~/.vimrc: .config/nvim/init.vim
     ~/.rgignore: .config/rg/.rgignore
-    ~/.vim: vim
-    ~/.vimrc: vimrc
 
 # https://github.com/anishathalye/dotbot#shell
 - shell:

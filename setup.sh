@@ -17,7 +17,13 @@ install_volta() {
 
 # https://rustup.rs/
 install_rustup() {
-  curl https://sh.rustup.rs -sSf | sh
+  rustup="~/.rustup"
+  if [ -z "$rustup" ]; then
+    echo "Rustup is not installed, installing now"
+    curl https://sh.rustup.rs -sSf | bash
+  else
+    echo "Rustup is already installed, nothing to do here"
+  fi
 }
 
 # https://z-shell.pages.dev/
@@ -35,7 +41,7 @@ install_homebrew() {
       echo "Homebrew requires osx command lines tools, please download xcode first"
       /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     else
-      echo "Homebrew is installed, nothing to do here"
+      echo "Homebrew is already installed, nothing to do here"
     fi
   fi
 }

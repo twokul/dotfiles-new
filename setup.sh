@@ -55,15 +55,15 @@ install_homebrew() {
 clone_dotfiles() {
   echo "dotfiles -------------------------------------------------"
   
-  if [ -f "$DOTFILES" ]; then
-    echo "Dotfiles have already been cloned into the home dir"
-  else
+  if [ -z "$DOTFILES" ]; then
     echo "Cloning dotfiles"
     git clone https://github.com/twokul/dotfiles.git ~/.dotfiles
+  else
+    echo ".dotfiles have already been cloned into the home dir"
   fi
 }
 
-# Might as well ask for password up-front, right?
+# Homebrew needs `sudo` access when running the fresh install
 echo "Starting install script, please grant me sudo access..."
 sudo -v
 

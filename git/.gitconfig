@@ -1,0 +1,4 @@
+[core]
+  excludesfile = "~/.dotfiles/git/.gitignore.global"
+  editor = nvim
+  pager = delta

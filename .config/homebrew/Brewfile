@@ -7,10 +7,10 @@ tap "homebrew/cask-versions"
 # https://github.com/buo/homebrew-cask-upgrade
 tap "buo/cask-upgrade"
 
-brew "font-inconsolata"
-brew "font-inconsolata-nerd-font"
-brew "font-inconsolata-go-nerd-font"
-brew "font-fira-code"
+cask "font-inconsolata"
+cask "font-inconsolata-nerd-font"
+cask "font-inconsolata-go-nerd-font"
+cask "font-fira-code"
 
 # https://github.com/BurntSushi/ripgrep
 brew "ripgrep"

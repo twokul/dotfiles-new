@@ -22,7 +22,7 @@ install_zi() {
 # https://brew.sh/
 install_homebrew() {
   if [ "$(uname)" == "Darwin" ]; then
-    brew="/usr/local/bin/brew"
+    brew="/opt/homebrew/bin/brew"
     if [ -f "$brew" ]; then
       echo "Homebrew is installed, nothing to do here"
     else

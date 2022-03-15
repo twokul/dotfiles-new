@@ -22,13 +22,13 @@ brew "zoxide"
 brew "fzf"
 
 # https://github.com/github/hub
-brew hub
+brew "hub"
 
 # https://github.com/neovim/neovim
-brew neovim
+brew "neovim"
 
 # https://github.com/dandavison/delta
-brew git-delta
+brew "git-delta"
 
 # https://formulae.brew.sh/cask/google-chrome
 cask "google-chrome"

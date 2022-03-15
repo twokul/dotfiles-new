@@ -6,7 +6,13 @@ DOTFILES="$HOME/.dotfiles"
 
 # https://volta.sh/
 install_volta() {
-  curl https://get.volta.sh | bash
+  volta="~/.volta"
+  if [ -z "$volta" ]; then
+    echo "Volta is not installed, installing now"
+    curl https://get.volta.sh | bash
+  else
+    echo "Volta is already installed, nothing to do here"
+  fi
 }
 
 # https://rustup.rs/

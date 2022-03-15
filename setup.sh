@@ -52,6 +52,22 @@ install_homebrew() {
   fi
 }
 
+install_homebrew_bundle() {
+  if [ "$(uname)" == "Darwin" ]; then
+    echo "Installing brew bundle"
+    
+    brew tap Homebrew/bundle
+    
+    cd "$DOTFILES/.config/homebrew/" || echo "Couldn't get into Homebrew subdir"
+    
+    brew bundle
+    
+    echo "Installing Homebrew apps from brew file"
+    
+    cd -
+  fi
+}
+
 clone_dotfiles() {
   echo "dotfiles -------------------------------------------------"
   
@@ -72,6 +88,9 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Automatically install Homebrew if it is not installed
 install_homebrew || echo "Failed to install Homebrew"
+
+# Automatically install Homebrew Bundle
+install_homebrew_bundle || echo "Failed to install Homebrew Bundle"
 
 # Automatically install Volta if it is not installed
 install_volta || echo "Failed to install Volta"

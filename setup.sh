@@ -46,7 +46,7 @@ clone_dotfiles() {
 }
 
 # Automatically install Homebrew if it is not installed
-install_homebrew || echo "Failed to install Homebrew" && exit 1
+install_homebrew || echo "Failed to install Homebrew"
 
 # Automatically install Volta if it is not installed
 install_volta || echo "Failed to install Volta" && exit 1

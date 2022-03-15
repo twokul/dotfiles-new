@@ -55,7 +55,7 @@ install_homebrew() {
 clone_dotfiles() {
   echo "dotfiles -------------------------------------------------"
   
-  if [ -z "$DOTFILES" ]; then
+  if [ ! -d "$DOTFILES" ]; then
     echo "Cloning dotfiles"
     git clone https://github.com/twokul/dotfiles.git ~/.dotfiles
   else

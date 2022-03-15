@@ -89,7 +89,7 @@ clone_dotfiles || echo "Failed to clone dotfiles"
 cd "$DOTFILES"
 
 # Run dotbot
-./install
+$DOTFILES/install
 
 echo "---------------------------------------------------------"
 echo "All done!"

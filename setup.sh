@@ -28,7 +28,13 @@ install_rustup() {
 
 # https://z-shell.pages.dev/
 install_zi() {
-  /bin/bash -c "$(curl -fsSL https://git.io/get-zi)" --
+  zi="~/.zi"
+  if [ -z "$zi" ]; then
+    echo "ZI is not installed, installing now"
+    /bin/bash -c "$(curl -fsSL https://git.io/get-zi)" --
+  else
+    echo "ZI is already installed, nothing to do here"
+  fi
 }
 
 # https://brew.sh/

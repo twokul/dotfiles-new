@@ -74,16 +74,16 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 install_homebrew || echo "Failed to install Homebrew"
 
 # Automatically install Volta if it is not installed
-install_volta || echo "Failed to install Volta" && exit 1
+install_volta || echo "Failed to install Volta"
 
 # Automatically install rustup if it is not installed
-install_rustup || echo "Failed to install rustup" && exit 1
+install_rustup || echo "Failed to install rustup"
 
 # Automatically install zi if it is not installed
-install_zi || echo "Failed to install ZI" && exit 1
+install_zi || echo "Failed to install ZI"
 
 # Clone dotfiles repo into `~/.dotfiles/` if needed
-clone_dotfiles || echo "Failed to clone dotfiles" && exit 1
+clone_dotfiles || echo "Failed to clone dotfiles"
 
 # Make sure to cd into `~/.dotfiles`
 cd "$DOTFILES"

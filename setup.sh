@@ -58,7 +58,7 @@ install_homebrew_bundle() {
     
     brew tap Homebrew/bundle
     
-    cd "$DOTFILES/.config/homebrew/" || echo "Couldn't get into Homebrew subdir"
+    cd "$DOTFILES/.config/homebrew" || echo "Couldn't get into Homebrew subdir"
     
     brew bundle
     
@@ -86,6 +86,9 @@ sudo -v
 # Keep-alive: update existing sudo time stamp if set, otherwise do nothing.
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+# Clone dotfiles repo into `~/.dotfiles/` if needed
+clone_dotfiles || echo "Failed to clone dotfiles"
+
 # Automatically install Homebrew if it is not installed
 install_homebrew || echo "Failed to install Homebrew"
 
@@ -100,9 +103,6 @@ install_rustup || echo "Failed to install rustup"
 
 # Automatically install zi if it is not installed
 install_zi || echo "Failed to install ZI"
-
-# Clone dotfiles repo into `~/.dotfiles/` if needed
-clone_dotfiles || echo "Failed to clone dotfiles"
 
 # Make sure to cd into `~/.dotfiles`
 cd "$DOTFILES"

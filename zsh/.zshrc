@@ -20,3 +20,7 @@ eval "$(zoxide init zsh)"
 # Install useful key bindings and fuzzy completion
 # https://github.com/junegunn/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Add Volta
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

@@ -1,4 +1,3 @@
-zi load spaceship-prompt/spaceship-prompt
 zi light z-shell/zzcomplete
 
 # https://github.com/z-shell/ls_colors

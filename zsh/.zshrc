@@ -17,6 +17,9 @@ eval "$(hub alias -s)"
 # https://github.com/ajeetdsouza/zoxide
 eval "$(zoxide init zsh)"
 
+# Enable spaceship
+eval "$(starship init zsh)"
+
 # Install useful key bindings and fuzzy completion
 # https://github.com/junegunn/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

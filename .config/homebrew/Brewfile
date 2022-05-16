@@ -30,6 +30,9 @@ brew "neovim"
 # https://github.com/dandavison/delta
 brew "git-delta"
 
+# https://formulae.brew.sh/formula/starship
+brew "starship"
+
 # https://formulae.brew.sh/cask/google-chrome
 cask "google-chrome"
 cask "google-chrome-canary"

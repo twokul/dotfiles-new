@@ -57,21 +57,21 @@ scrolling:
 font:
   # The normal (roman) font face to use.
   normal:
-    family: FiraCode Nerd Font Mono
+    family: Inconsolata Nerd Font Mono
     style: Regular
 
   # The bold font face
   bold:
-    family: FiraCode Nerd Font Mono
+    family: Inconsolata Nerd Font Mono
     style: Bold
 
   # The italic font face
   italic:
-    family: FiraCode Nerd Font Mono
+    family: Inconsolata Nerd Font Mono
     style: Italic
 
   # Point size of the font
-  size: 13.0
+  size: 16.0
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.

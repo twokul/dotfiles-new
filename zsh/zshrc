@@ -1,0 +1,55 @@
+export CODE="$HOME/code"
+export DOTFILES="$HOME/.dotfiles"
+
+# Global Variables
+export EDITOR=nvim
+export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
+export FZF_COMPLETION_OPTS='+c -x'
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules,bower_components,.vscode,tmp}/*" 2> /dev/null'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
+
+# Aliases
+# Create a new directory
+alias md="mkdir -p"
+
+# Tmux
+alias tns="tmux new -s"
+alias ta="tmux attach -t"
+alias tls="tmux ls"
+alias tk="tmux kill-session -t"
+
+# `coreutils` overrides
+alias ls="ls -F"
+alias l="ls -lAh"
+alias ll="ls -l"
+alias la="ls -A"
+
+# Git
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+alias gco="git checkout"
+alias gs="git status -sb"
+alias gp="git push origin HEAD"
+alias gr="git remote"
+alias ga="git add"
+alias gpf="git push origin HEAD --force"
+alias gd="git diff"
+alias gc="git commit -v"
+alias gdt="git difftool"
+alias gb="git branch"
+
+# Enable zoxide
+# https://github.com/ajeetdsouza/zoxide
+eval "$(zoxide init zsh)"
+
+# Enable spaceship
+eval "$(starship init zsh)"
+
+# Install useful key bindings and fuzzy completion
+# https://github.com/junegunn/fzf
+[ -f ~/.fzf ] && source ~/.fzf
+
+# Add Volta
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

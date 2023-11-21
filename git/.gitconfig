@@ -1,12 +1,12 @@
 [init]
-	defaultBranch = main
+  defaultBranch = main
 
 [user]
-	name = Alex Navasardyan
-	email = alex.navasardyan@gmail.com
+  name = Alex Navasardyan
+  email = alex.navasardyan@gmail.com
 
 [core]
-  excludesfile = "~/.dotfiles/git/.gitignore.global"
+  excludesfile = "~/.gitignore.global"
   editor = nvim
   pager = delta
 

@@ -40,7 +40,7 @@ alias gdt="git difftool"
 alias gb="git branch"
 
 # pnpm
-alais p="pnpm"
+alias p="pnpm"
 
 # Enable zoxide
 # https://github.com/ajeetdsouza/zoxide

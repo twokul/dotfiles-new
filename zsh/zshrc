@@ -48,7 +48,7 @@ eval "$(starship init zsh)"
 
 # Install useful key bindings and fuzzy completion
 # https://github.com/junegunn/fzf
-[ -f ~/.fzf ] && source ~/.fzf
+source <(fzf --zsh)
 
 # Add Volta
 export VOLTA_HOME="$HOME/.volta"

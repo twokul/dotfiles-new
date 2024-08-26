@@ -39,6 +39,9 @@ alias gc="git commit -v"
 alias gdt="git difftool"
 alias gb="git branch"
 
+# pnpm
+alais p="pnpm"
+
 # Enable zoxide
 # https://github.com/ajeetdsouza/zoxide
 eval "$(zoxide init zsh)"

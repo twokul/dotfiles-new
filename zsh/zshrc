@@ -14,6 +14,9 @@ export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap 
 # Create a new directory
 alias md="mkdir -p"
 
+# PNPM
+alias p="pnpm"
+
 # Tmux
 alias tns="tmux new -s"
 alias ta="tmux attach -t"

@@ -28,6 +28,22 @@ require("lazy").setup({
 
   { "nvim-tree/nvim-web-devicons", lazy = true },
 
+  -- https://github.com/danielfalk/smart-open.nvim
+  {
+    "danielfalk/smart-open.nvim",
+    branch = "0.2.x",
+    config = function()
+      require("telescope").load_extension("smart_open")
+    end,
+    dependencies = {
+      "kkharji/sqlite.lua",
+      -- Only required if using match_algorithm fzf
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+      -- Optional.  If installed, native fzy will be used when match_algorithm is fzy
+      { "nvim-telescope/telescope-fzy-native.nvim" },
+    },
+  },
+
   -- https://github.com/nvim-lualine/lualine.nvim
   {
     "nvim-lualine/lualine.nvim",

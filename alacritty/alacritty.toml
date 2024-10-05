@@ -1,4 +1,4 @@
-import = ["/Users/alex/.config/alacritty/themes/themes/github_dark.yaml"]
+import = ["/Users/alex/.config/alacritty/themes/themes/github_dark.toml"]
 live_config_reload = true
 
 [bell]
@@ -19,7 +19,7 @@ render_timer = false
 TERM = "xterm-256color"
 
 [font]
-size = 16.0
+size = 15.0
 
 [font.bold]
 family = "Inconsolata Nerd Font Mono"

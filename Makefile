@@ -17,7 +17,7 @@ sync:
 	[ -f ~/.zshrc ] || ln -s $(PWD)/zsh/zshrc ~/.zshrc
 	[ -f ~/.fzf ] || ln -s $(PWD)/fzf/fzf ~/.fzf
 	[ -f ~/.config/nvim/init.lua ] || ln -s $(PWD)/nvim/init.lua ~/.config/nvim/init.lua
-	[ -f ~/.config/alacritty/alacritty.yml ] || ln -s $(PWD)/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
+	[ -f ~/.config/alacritty/alacritty.toml ] || ln -s $(PWD)/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml
 
 	# don't show last login message
 	touch ~/.hushlogin

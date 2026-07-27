@@ -40,3 +40,16 @@ Thumbs.db
 .idea
 target
 agentic-setup.md
+
+cjs-to-esm-ts.js
+rename-js-to-mjs.js
+.cursor
+.github/instructions
+
+# Claude Code files
+.claude/
+CLAUDE.md
+.plan
+plans
+todos
+.zshrc.local

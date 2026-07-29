@@ -40,3 +40,13 @@ Thumbs.db
 .idea
 target
 agentic-setup.md
+
+cjs-to-esm-ts.js
+rename-js-to-mjs.js
+.cursor
+.github/instructions
+
+# Claude Code files
+# Anchored to the repo root: an unanchored `.plan` matches at any depth in
+# every repo on this machine.
+/.plan

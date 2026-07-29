@@ -1,0 +1,4 @@
+# Homebrew 6 neither reads nor writes Brewfile.lock.json -- lockfile support
+# was dropped after Homebrew 4. Ignored so an older brew, or a future one that
+# revives it, cannot re-add stale generated metadata.
+Brewfile.lock.json

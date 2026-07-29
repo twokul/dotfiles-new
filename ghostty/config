@@ -1,0 +1,4 @@
+# Tokyo Night, following the macOS system appearance.
+# nvim/lua/plugins/colorscheme.lua carries the matching pair, so the terminal
+# and the editor switch together.
+theme = dark:TokyoNight Moon,light:TokyoNight Day

@@ -1,22 +1,27 @@
 all: sync
 
-sync:
-	mkdir -p ~/.config/rg
-	mkdir -p ~/.config/fzf
-	mkdir -p ~/.config/ghostty
-	mkdir -p ~/.tmux/
+# Guard style: `[ -e X ] || [ -L X ]`.
+#   -f is wrong for directory targets, and BOTH -f and -e follow symlinks, so
+#   they report false for a *broken* link and `ln` then aborts the whole run.
+#   -L tests the link itself, so the pair covers files, directories, and live
+#   or dangling symlinks alike.
+LINK = [ -e $(1) ] || [ -L $(1) ] || ln -s $(PWD)/$(2) $(1)
 
-	[ -f ~/.gitconfig ] || ln -s $(PWD)/git/.gitconfig ~/.gitconfig
-	[ -f ~/.gitignore.global ] || ln -s $(PWD)/git/.gitignore.global ~/.gitignore.global
-	[ -f ~/.tmux.conf ] || ln -s $(PWD)/tmux/tmux.conf ~/.tmux.conf
-	[ -f ~/.rgignore ] || ln -s $(PWD)/rg/rgignore ~/.rgignore
-	[ -f ~/.zshrc ] || ln -s $(PWD)/zsh/zshrc ~/.zshrc
-	[ -f ~/.fzf ] || ln -s $(PWD)/fzf/fzf ~/.fzf
-	[ -f ~/.config/ghostty/config ] || ln -s $(PWD)/ghostty/config ~/.config/ghostty/config
+sync:
+	# Only ~/.config/ghostty is needed: it is the one directory a link below
+	# actually lands in. rg and tmux link to ~/.rgignore and ~/.tmux.conf.
+	mkdir -p ~/.config/ghostty
+
+	$(call LINK,~/.gitconfig,git/.gitconfig)
+	$(call LINK,~/.gitignore.global,git/.gitignore.global)
+	$(call LINK,~/.tmux.conf,tmux/tmux.conf)
+	$(call LINK,~/.rgignore,rg/rgignore)
+	$(call LINK,~/.zshrc,zsh/zshrc)
+	$(call LINK,~/.config/ghostty/config,ghostty/config)
 
 	# LazyVim needs the whole tree (lua/config, lua/plugins), so link the
 	# directory rather than a single init.lua.
-	[ -e ~/.config/nvim ] || ln -s $(PWD)/nvim ~/.config/nvim
+	$(call LINK,~/.config/nvim,nvim)
 
 	# don't show last login message
 	touch ~/.hushlogin
@@ -27,7 +32,6 @@ clean:
 	rm -f ~/.tmux.conf
 	rm -f ~/.rgignore
 	rm -f ~/.zshrc
-	rm -f ~/.fzf
 	rm -f ~/.config/ghostty/config
 	# only unlink; never recurse into a real config directory
 	[ -L ~/.config/nvim ] && rm -f ~/.config/nvim || true

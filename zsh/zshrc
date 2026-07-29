@@ -81,3 +81,6 @@ fi
 
 # Ensure that Homebrew-installed PostgreSQL binaries are available on the PATH
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+
+# Machine-local secrets (API keys, tokens). Untracked, outside any repo.
+[ -f "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"

@@ -47,9 +47,6 @@ rename-js-to-mjs.js
 .github/instructions
 
 # Claude Code files
-.claude/
-CLAUDE.md
-.plan
-plans
-todos
-.zshrc.local
+# Anchored to the repo root: an unanchored `.plan` matches at any depth in
+# every repo on this machine.
+/.plan

@@ -8,9 +8,9 @@ all: sync
 LINK = [ -e $(1) ] || [ -L $(1) ] || ln -s $(PWD)/$(2) $(1)
 
 sync:
-	mkdir -p ~/.config/rg
+	# Only ~/.config/ghostty is needed: it is the one directory a link below
+	# actually lands in. rg and tmux link to ~/.rgignore and ~/.tmux.conf.
 	mkdir -p ~/.config/ghostty
-	mkdir -p ~/.tmux/
 
 	$(call LINK,~/.gitconfig,git/.gitconfig)
 	$(call LINK,~/.gitignore.global,git/.gitignore.global)

@@ -17,6 +17,13 @@ alias md="mkdir -p"
 # PNPM
 alias p="pnpm"
 
+# Bun
+alias b="bun"
+
+# Claude Code
+alias cc="claude --dangerously-skip-permissions"
+alias ccc="claude --chrome"
+
 # Tmux
 alias tns="tmux new -s"
 alias ta="tmux attach -t"
@@ -55,6 +62,10 @@ eval "$(starship init zsh)"
 # Install useful key bindings and fuzzy completion
 # https://github.com/junegunn/fzf
 source <(fzf --zsh)
+
+# Tmux
+alias ta="tmux attach -t"
+alias tns="tmux new-session -A -s"
 
 # Add Volta
 export VOLTA_HOME="$HOME/.volta"

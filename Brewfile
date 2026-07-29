@@ -1,6 +1,4 @@
 tap "anomalyco/tap"
-tap "homebrew/bundle"
-tap "homebrew/services"
 tap "humanlayer/humanlayer", trusted: true
 tap "max-sixty/worktrunk"
 tap "openclaw/tap"
@@ -237,5 +235,4 @@ go "go.uber.org/mock/mockgen"
 cargo "zellij"
 uv "nano-pdf"
 uv "ruff"
-uv "x-cli", source: "file:///Users/alex/code/x-cli"
 npm "corepack"

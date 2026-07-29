@@ -1,9 +1,9 @@
 all: sync
 
 sync:
-	mkdir -p ~/.config/nvim
 	mkdir -p ~/.config/rg
 	mkdir -p ~/.config/fzf
+	mkdir -p ~/.config/ghostty
 	mkdir -p ~/.tmux/
 
 	[ -f ~/.gitconfig ] || ln -s $(PWD)/git/.gitconfig ~/.gitconfig
@@ -12,7 +12,11 @@ sync:
 	[ -f ~/.rgignore ] || ln -s $(PWD)/rg/rgignore ~/.rgignore
 	[ -f ~/.zshrc ] || ln -s $(PWD)/zsh/zshrc ~/.zshrc
 	[ -f ~/.fzf ] || ln -s $(PWD)/fzf/fzf ~/.fzf
-	[ -f ~/.config/nvim/init.lua ] || ln -s $(PWD)/nvim/init.lua ~/.config/nvim/init.lua
+	[ -f ~/.config/ghostty/config ] || ln -s $(PWD)/ghostty/config ~/.config/ghostty/config
+
+	# LazyVim needs the whole tree (lua/config, lua/plugins), so link the
+	# directory rather than a single init.lua.
+	[ -e ~/.config/nvim ] || ln -s $(PWD)/nvim ~/.config/nvim
 
 	# don't show last login message
 	touch ~/.hushlogin
@@ -24,6 +28,8 @@ clean:
 	rm -f ~/.rgignore
 	rm -f ~/.zshrc
 	rm -f ~/.fzf
-	rm -f ~/.config/nvim/init.lua
+	rm -f ~/.config/ghostty/config
+	# only unlink; never recurse into a real config directory
+	[ -L ~/.config/nvim ] && rm -f ~/.config/nvim || true
 
 .PHONY: all clean sync

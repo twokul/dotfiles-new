@@ -71,13 +71,9 @@ alias tns="tmux new-session -A -s"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
-# Ruby
-# Homebrew-installed Ruby to take priority over the system Ruby
-# https://mac.install.guide/ruby/13.html
-if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
-  export PATH=/opt/homebrew/opt/ruby/bin:$PATH
-  export PATH=`gem environment gemdir`/bin:$PATH
-fi
+# Ruby is managed by mise, which activates later and wins the PATH race anyway.
+# Don't put Homebrew's Ruby back here: its gem dir holds a second copy of rdoc,
+# so RubyGems loaded the gem twice and warned on every constant, in every shell.
 
 # Ensure that Homebrew-installed PostgreSQL binaries are available on the PATH
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
